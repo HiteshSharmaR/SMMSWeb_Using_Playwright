@@ -1,0 +1,18 @@
+export const userFormLocators = {
+  USER_ID: "input[name='UserVO.UserID']",
+  FULL_NAME: "input[name='UserVO.FullName']",
+  RANK_PICKLIST: "input[name='UserVO.Rank']",
+  RANK_SELECTION_SEARCH_BOX :"div.vinspl-picklist-search input",
+  MODAL_BUTTONS :"div.vinspl-picklist-footer",
+  FIRST_RESULT_SELECT :"td.e-rowcell",
+  CHECKBOX_FIRST_TWO_FAST :"input.e-checkbox",
+  CHECKBOX_SELECT_FIRST_TWO :"tbody[role='rowgroup'] div.e-checkbox-wrapper input.e-control",
+  NEW_PASSWORD :"input[name='vo.Newpassword']",
+  CONFIRM_PASSWORD :"input[name='vo.ConfirmNewPassword']",
+  pUSER_SAVE_BUTTON:"button.save",
+  GRID_ROWS:"tr.e-row",
+  SEARCH_INPUT :"input[title='User ID\\'s filter bar cell']",
+  CONTEXT_MENU_BUTTON :"span.vispl-context-menu",
+  CONTEXT_MENU_ITEMS :"tr td.e-rowcell",
+  DELETE_MENU_ITEM :"li:has-text('Delete')",
+};
