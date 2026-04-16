@@ -9,10 +9,13 @@ export const userFormLocators = {
   CHECKBOX_SELECT_FIRST_TWO :"tbody[role='rowgroup'] div.e-checkbox-wrapper input.e-control",
   NEW_PASSWORD :"input[name='vo.Newpassword']",
   CONFIRM_PASSWORD :"input[name='vo.ConfirmNewPassword']",
-  pUSER_SAVE_BUTTON:"button.save",
+  USER_SAVE_BUTTON:"button.save",
   GRID_ROWS:"tr.e-row",
   SEARCH_INPUT :"input[title='User ID\\'s filter bar cell']",
   CONTEXT_MENU_BUTTON :"span.vispl-context-menu",
   CONTEXT_MENU_ITEMS :"tr td.e-rowcell",
   DELETE_MENU_ITEM :"li:has-text('Delete')",
+  USER_RANK_SELECTION_OK_BUTTON:"button[id^='btnSaveOk']",
+  USER_EXPLORER_CONTEXT_MENU_OPTION:"div.e-contextmenu-wrapper li[role='menuitem']",
+  USER_EXPLORER_DELETE_MODAL_PROCEED_BUTTON: "button[id^='ID_btnOk']"
 };

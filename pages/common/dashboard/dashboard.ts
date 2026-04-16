@@ -85,10 +85,7 @@ export class DashboardPage {
         await searchInput.press('Enter');
 
         console.log("Step 5: Selecting ship...");
-        await this.page.locator(
-            shipSelectionPicklist.SHIP_SELECTION_FIRST_RESULT,
-            { hasText: shipName }
-        ).click();
+        await this.page.locator(shipSelectionPicklist.SHIP_SELECTION_FIRST_RESULT,{ hasText: shipName }).click();
 
         console.log("Step 6: Clicking OK...");
 
