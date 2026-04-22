@@ -4,12 +4,6 @@ import { chromium, Browser, BrowserContext, Page } from '@playwright/test';
 setDefaultTimeout(300 * 1000);
 
 let browser: Browser;
-let context: BrowserContext;
-export let page: Page;
-
-export const world = {
-  page: undefined as unknown as Page
-};
 
 BeforeAll(async () => {
   browser = await chromium.launch({
@@ -19,28 +13,29 @@ BeforeAll(async () => {
   });
 });
 
-Before(async () => {
-  context = await browser.newContext({
-  
+Before(async function () {
+  this.context = await browser.newContext({
     baseURL: 'https://smmswebofficetest.vertexinfosoft.com',
     viewport: null
   });
-  world.page = await context.newPage();
+
+  this.page = await this.context.newPage();
 });
 
 After(async function (scenario) {
-
   const status = scenario.result?.status;
-
   console.log(`Scenario Status: ${status}`);
 
-  // Pause for BOTH passed & failed
-  if (status === 'PASSED' || status === 'FAILED') {
-    console.log("⏸ Pausing after scenario...");
-    await world.page.pause();
+  if (status === 'FAILED') {
+    await this.page.pause();
   }
 
-  await context.close();
+  if (this.page && !this.page.isClosed()) {
+    await this.page.close();
+  }
+  if (this.context) {
+    await this.context.close();
+  }
 });
 
 AfterAll(async () => {

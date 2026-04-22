@@ -8,8 +8,9 @@ Feature: Create users with mapped data
     Then record should be created successfully
 
     Examples: 
-      | userId | password | dataKey | ship    | module | submodule |
-      | fe     |     1234 | user1   | Freeway | COMMON | New User  |
+      | userId | password | dataKey | ship           | module | submodule |
+      | fe     |     1234 | user1   | Freeway        | COMMON | New User  |
+      | fe     |     1234 | user1   | Master Library | COMMON | New User  |
 
   Scenario Outline: Delete existing user
     Given user logs in with "<userId>" and "<password>"

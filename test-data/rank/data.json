@@ -1,0 +1,16 @@
+{
+    "rank1": {
+        "Code": "Test44",
+        "Name": "Test55",
+        "GroupType": "Power Users",
+        "SubGroupType": "Masters",
+        "Role":"Fleet Manager"
+    },
+    "rank2": {
+        "Code": "Test95",
+        "Name": "Test82",
+        "GroupType": "Power Users",
+        "SubGroupType": "Fleet TSI",
+        "Role":"Fleet Manager"
+    }
+}
