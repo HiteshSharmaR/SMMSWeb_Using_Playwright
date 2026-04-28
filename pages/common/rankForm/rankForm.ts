@@ -1,5 +1,4 @@
 import { Page, expect } from '@playwright/test';
-import { text } from 'node:stream/consumers';
 import { rankFormLocators } from './rankForm.locators';
 import { Dropdown } from '../../../utils/dropdown'
 

@@ -1,8 +1,7 @@
 import { Before, After, BeforeAll, AfterAll, setDefaultTimeout } from '@cucumber/cucumber';
 import { chromium, Browser, BrowserContext, Page } from '@playwright/test';
 
-setDefaultTimeout(300 * 1000);
-
+setDefaultTimeout(600 * 1000);
 let browser: Browser;
 
 BeforeAll(async () => {

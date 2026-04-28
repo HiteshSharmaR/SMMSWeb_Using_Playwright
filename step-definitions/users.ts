@@ -8,8 +8,7 @@ let loginPage: LoginPage;
 let dashboard: DashboardPage;
 let userForm: UserForm;
 
-Given('user logs in with {string} and {string}',
-  async function (userId: string, password: string) {
+Given('user logs in with {string} and {string}',async function (userId: string, password: string) {
     const loginPage = new LoginPage(this.page);
     await loginPage.navigate();
     await loginPage.clickOnCokkiesOkButtonIfPresent();

@@ -1,0 +1,15 @@
+{
+    "project1": {
+       "Code":"Test_Code",
+       "Name":"Test_Name",
+       "Category":"FOR TESTING DS",
+       "Type":"Fleet"
+    },
+
+    "project2":{
+  "Code":"Test_Code_01",
+       "Name":"Test_Name_01",
+       "Category":"FOR TESTING DS",
+       "Type":"Fleet"
+    }
+}
