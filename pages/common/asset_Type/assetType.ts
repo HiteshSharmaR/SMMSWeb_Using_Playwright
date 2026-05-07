@@ -7,7 +7,7 @@ export class AssetType {
 
     async fillAssetType(data: any) {
         await this.page.locator(assetType.ASSET_TYPE_ADD_BUTTON).click();
-        await this.page.fill(assetType.ASSET_TYPE_NAME, 'Test');
+        await this.page.fill(assetType.ASSET_TYPE_NAME, data.Name);
         await this.page.click(assetType.ASSET_TYPE_SAVE_BUTTON);
         const modal = new Modal(this.page);
         await modal.closeToastIfPresent();
@@ -31,13 +31,12 @@ export class AssetType {
         //  normal click
         await filterIcon.click();
         console.log("✅ Filter icon clicked");
-        await this.page.fill(assetType.ASSET_FILTER_SEARCH_INPUT,'Test');
+        await this.page.fill(assetType.ASSET_FILTER_SEARCH_INPUT,data.Name);
         await this.page.click(assetType.ASSET_FILTER_SEARCH_INPUT_FILTER_BUTTON);
         await this.page.locator(assetType.ASSET_TYPE_DISPLAYED_RECORDS,{hasText:'Test'}).click({ button: 'right'});
         await this.page.locator(assetType.ASSET_TYPE_CONTEXT_MENU_OPTION,{hasText:'Delete'}).click();
         await this.page.locator(assetType.CLICK_ON_ASSET_TYPE_DELETE_PROCEED_BUTTON).click();
         const modal = new Modal(this.page);
         await modal.closeToastIfPresent();
-        await this.page.pause();
     }
 }

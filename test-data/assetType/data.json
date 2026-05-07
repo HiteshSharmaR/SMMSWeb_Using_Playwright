@@ -1,5 +1,9 @@
 {
-    "AssetType1":{
+    "AssetType1": {
+        "Name": "Test"
+    },
 
-}
+    "AssetType2":{
+        "Name":"Test1"
+    }
 }
