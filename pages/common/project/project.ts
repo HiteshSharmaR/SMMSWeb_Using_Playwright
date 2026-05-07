@@ -35,5 +35,7 @@ export class ProjectPage {
         await this.page.locator(projectLocator.PROJECT_EXPLORER_GRID_RECORDS,{hasText:data.Code}).click({ button: 'right' });
         await this.page.locator(projectLocator.PROJECT_CONTEXT_MENU_OPTION,{hasText:'Delete'}).click();
         await this.page.locator(projectLocator.CLICK_ON_PROJECT_DELETE_PROCEED_BUTTON).click();
+        const modal = new Modal(this.page);
+        await modal.closeToastIfPresent();
     }
 }

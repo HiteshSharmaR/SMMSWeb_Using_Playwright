@@ -1,6 +1,7 @@
 import { Page, expect } from '@playwright/test';
 import { rankFormLocators } from './rankForm.locators';
 import { Dropdown } from '../../../utils/dropdown'
+import {Modal} from '../../../utils/modalHelper';
 
 
 export class RankForm {
@@ -34,6 +35,8 @@ export class RankForm {
     await this.page.locator(rankFormLocators.ROLE_FIRST_RESULT,{hasText:data.Role}).click();
     await this.page.click(rankFormLocators.RANK_SUB_GROUP_TYPE_MODAL_OK_BUTTON);
     await this.page.click(rankFormLocators.RANK_SAVE_BUTTON);
+    const modal = new Modal(this.page);
+    await modal.closeToastIfPresent();
   }
   async deleteRank(data: any) {
     await this.page.fill(rankFormLocators.RANK_SEARCH_INPUT, data.Name);
@@ -41,6 +44,7 @@ export class RankForm {
     await this.page.locator(rankFormLocators.ROLE_FIRST_RESULT,{hasText:data.Name}).click({ button: 'right' });
     await this.page.locator(rankFormLocators.RANK_EXPLORER_CONTEXT_MENU_OPTION,{hasText:'Delete'}).click();
     await this.page.click(rankFormLocators.RANK_EXPLORER_DELETE_PROCEED_BUTON);
-    await this.page.pause();
+    const modal = new Modal(this.page);
+    await modal.closeToastIfPresent();
   }
 }

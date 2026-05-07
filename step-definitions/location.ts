@@ -1,6 +1,6 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import {getData} from '../utils/dataHelper'
- import {LocationPage} from '../pages/common/locationForm/locationPage';
+import {LocationPage} from '../pages/common/locationForm/locationPage';
 
  let locationPage: LocationPage;
 

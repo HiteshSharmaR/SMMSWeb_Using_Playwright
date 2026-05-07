@@ -1,6 +1,7 @@
 import { Page, expect } from '@playwright/test';
 import { text } from 'node:stream/consumers';
 import { userFormLocators } from './userForm.locator';
+import {Modal} from '../../../utils/modalHelper';
 
 export class UserForm {
   constructor(private page: Page) {  }
@@ -31,6 +32,8 @@ export class UserForm {
 
   async clickOnUserSaveButton(){
     await this.page.click(userFormLocators.USER_SAVE_BUTTON);
+    const modal = new Modal(this.page);
+    await modal.closeToastIfPresent();
   }
   async verifySuccess() {
   }
@@ -41,5 +44,7 @@ export class UserForm {
     await this.page.locator(userFormLocators.FIRST_RESULT_SELECT,{hasText:data.UserID}).click({ button: 'right' })
     await this.page.locator(userFormLocators.USER_EXPLORER_CONTEXT_MENU_OPTION,{hasText:'Delete'}).click();
     await this.page.click(userFormLocators.USER_EXPLORER_DELETE_MODAL_PROCEED_BUTTON);
+    const modal = new Modal(this.page);
+    await modal.closeToastIfPresent();
   }
 }
