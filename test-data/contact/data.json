@@ -1,0 +1,12 @@
+{
+    "Contact1": {
+        "AddressID": "CT001",
+        "Name": "Test Contact 1",
+        "ContactType": "Maker"
+    },
+    "Contact2": {
+        "AddressID": "CT002",
+        "Name": "Test Contact 2",
+        "ContactType": "Maker"
+    }
+}

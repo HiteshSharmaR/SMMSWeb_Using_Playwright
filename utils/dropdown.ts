@@ -1,17 +1,16 @@
 import { Page, expect } from '@playwright/test';
 
-export class Dropdown{
+export class Dropdown {
     constructor(private page: Page) {}
 
-async selectDropdown( visibleText: string) {
-   
-    // 2️⃣ Select option (floating dropdown)
-    const option = this.page.locator(`//li[normalize-space()='${visibleText}']`);
+    async selectDropdown(visibleText: string) {
+        const option = this.page.locator(`//li[normalize-space()='${visibleText}']`);
 
-    await option.waitFor({ state: 'visible' });
-    await option.click();
+        await option.waitFor({ state: 'visible', timeout: 5000 });
+        await option.scrollIntoViewIfNeeded();
+        await option.click({ force: true });
 
-    // 3️⃣ Wait for dropdown to close (EJ2 case)
-  //  await this.page.locator('.e-popup.e-popup-open').waitFor({ state: 'hidden' });
-}
+        // Optional: wait briefly for the dropdown to close and the next action to be stable
+        await this.page.waitForTimeout(200);
+    }
 }
